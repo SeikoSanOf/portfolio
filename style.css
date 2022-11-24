@@ -1,0 +1,37 @@
+#entete
+{
+    background-color: cyan;
+    text-align: center;
+}
+
+#main
+{
+    max-width: 960px;
+    margin:auto;
+}
+
+#menu
+{
+    float:left;
+    width:240px;
+    background-color: darkcyan;
+}
+#contenu
+{
+    float:left;
+    width:100px;
+    background-color: darkseagreen;
+}
+#contenu2
+{
+    float:left;
+    width:100px;
+    background-color: mediumpurple;
+}
+#footer
+{
+    background-color: crimson;
+    text-align: center;
+    clear:both;
+}
+
