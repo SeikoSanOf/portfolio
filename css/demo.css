@@ -79,13 +79,13 @@ a:hover {
 }
 
 .bp-header__present {
-	font-size: 0.85em;
+	font-size: 0.90em;
 	font-weight: 700;
 	position: relative;
 	z-index: 100;
 	display: block;
 	padding: 0 0 0.6em 0.1em;
-	letter-spacing: 0.5em;
+	letter-spacing: 0.25em;
 	text-transform: uppercase;
 	color: #8c32f3;
 }
