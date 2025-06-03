@@ -16,6 +16,7 @@
 }
 
 html, body {
+  scroll-behavior: smooth;
   height: 100%;
   font-family: Arial, sans-serif;
   background: #111;
@@ -86,7 +87,7 @@ header nav a {
   color: #ccc;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: clamp(14px, 2vw, 24px);
   padding: 0.5rem 0.8rem;
   border-radius: 6px;
   position: relative;
@@ -94,6 +95,8 @@ header nav a {
 }
 
 header nav a.main-btn {
+  padding: 0 1rem; 
+  box-sizing: border-box;
   margin-right: auto; /* pousse Main à gauche */
   font-weight: bold;
   background-color: #a955f70e;
@@ -134,11 +137,10 @@ header nav a:focus::after {
   border: 2px solid #a855f7;
   color: #a855f7;
   font-size: 1.3rem;
-  padding: 6px 12px;
+  padding: 2px 6px;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-  user-select: none;
 }
 
 #theme-toggle:hover,
@@ -194,7 +196,6 @@ h2 {
   color: #eee;
   font-weight: 700;
   margin-bottom: 25px;
-  text-shadow: 0 0 6px rgba(0,0,0,0.7);
   user-select: none;
 }
 
@@ -232,14 +233,17 @@ h2 {
 }
 
 .intro-section {
+  background-color: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(6px);
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2.5rem 1.5rem;
-  background-color: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  border: 2px solid rgba(168, 85, 247, 0.4); /* bordure visible mais douce */
-  transition: opacity 0.8
+  border: 1.5px solid rgba(168, 85, 247, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3); /* profondeur */
+  transition: opacity 0.8s;
 }
 
 .avatar-circle:hover {
@@ -250,46 +254,6 @@ h2 {
 .avatar-circle {
   border: 3px solid #cda1f7;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.intro-content {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  width: 100%;
-  gap: 40px;
-}
-
-.about:hover {
-  background: rgba(168, 85, 247, 0.15);
-}
-
-.text-zone {
-  flex: 1;
-  min-width: 300px;
-}
-
-.text-zone h2 {
-  font-size: 32px;
-  margin-bottom: 16px;
-}
-
-.text-zone p {
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-.canvas-zone {
-  flex: 1;
-  min-width: 300px;
-  height: 400px;
-}
-
-#characterCanvas {
-  width: 100%;
-  height: 100%;
-  background: rgba(175, 0, 0, 0.034);
-  border-radius: 8px;
 }
 
 .skills-container {
@@ -311,6 +275,7 @@ h2 {
 }
 
 .skill {
+  backdrop-filter: blur(6px);
   background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
   padding: 1rem;
@@ -337,75 +302,162 @@ h2 {
   background: rgba(168, 85, 247, 0.15);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .projects-container {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 0.5fr); /* 3 cartes côte à côte */
+  gap: 2rem;
   padding: 1rem;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
+  overflow: visible;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cartes côte à côte */
+  gap: 2rem;
+  padding: 2rem 1rem;
+  overflow: visible; /* important pour ne pas masquer */
 }
 
 .project-card {
-  flex: 0 0 auto;
-  scroll-snap-align: start;
-  scroll-snap-align: start;
-  width: 340px;
+  width: 100%;
+  min-height: 320px;
   border-radius: 16px;
-  background: #1a0d2f;
-  border: 2px solid #a855f7;
-  box-shadow:
-    0 0 10px #a855f7aa,
-    0 0 20px #a855f7aa inset;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: #eee;
-  text-decoration: none;
-  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  color: #eee;
+  text-decoration: none;
+  padding: 1.5rem;
 }
 
 .project-card:hover {
-  transform: scale(1.03);
-  box-shadow:
-    0 0 12px #e946fd,
-    0 0 30px #c855f7 inset;
+  transform: translateY(-10px) scale(1.02);
+  background: rgba(168, 85, 247, 0.1);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
 }
 
-.card-content h3 {
-  color: #e9b3ff;
-  text-shadow: 0 0 8px #a855f7;
+
+
+
+
+
+
+
+.project-card {
+  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1.5px solid rgba(168, 85, 247, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
-.card-content p {
-  color: #ccc;
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  background: rgba(168, 85, 247, 0.1);
 }
 
-.card-content h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
+
+
+
+
+
+
+
+
+
+
+
+.project-card h3 {
   color: #a855f7;
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
 }
 
-.card-content p {
-  font-size: 0.95rem;
+.project-card p {
   color: #ccc;
-  line-height: 1.4;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
+/* ----- Mobile : carrousel horizontal ----- */
+@media (max-width: 900px) {
+  .projects-container {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-snap-stop: always;
+    scroll-padding-inline: 1rem;
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    flex: 0 0 95%;
+    max-width: 600px;
+    margin-inline: auto;
+    scroll-snap-align: start;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Scrollbar custom pour les conteneurs */
 .projects-container::-webkit-scrollbar {
-  height: 8px;
+  height: 6px;
 }
-
-.projects-container::-webkit-scrollbar-track {
-  background: transparent;
-}
-
 .projects-container::-webkit-scrollbar-thumb {
-  background-color: #a855f7;
-  border-radius: 10px;
+  background: #a855f7;
+  border-radius: 4px;
 }
+
+/* Scrollbar globale */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #222;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+
+
+
 
 /* Scrollbar custom */
 ::-webkit-scrollbar {
@@ -426,16 +478,27 @@ h2 {
 .console-text {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 1.5rem;
-  color: #a855f7; /* Vert néon comme un terminal rétro */
-  background-color: #2c2c2c2c; /* Fond noir comme une console */
+  color: #a855f7; /* Violet néon */
+  background-color: rgba(44, 44, 44, 0.075); /* Fond semi-transparent */
   padding: 0.5rem;
   display: inline-block;
   border-radius: 4px;
-}
+  backdrop-filter: blur(1px);
 
 .blinking-cursor {
   color: #a855f7;
   animation: blink 1s steps(1) infinite;
+  border-radius: 4px;
+  backdrop-filter: blur(1px);
+}
+  
+  /* Effet néon léger */
+  text-shadow:
+    0 0 5px #a855f7,
+    0 0 10px #a855f7,
+    0 0 20px #c084fc,
+    0 0 30px #c084fc,
+    0 0 40px #d8b4fe;
 }
 
 @keyframes blink {
