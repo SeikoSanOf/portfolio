@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Portfolio - Seiko</title>
 <link rel="stylesheet" href="style.css" />
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
@@ -45,30 +46,30 @@
       </section>
 
       <section id="skills" data-aos="fade-up">
-        <h2>Skills</h2>
+        <h2 > Skills </h2>
         <div class="skills-container">
           <div class="skill">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML img" />
             <p>HTML</p>
           </div>
           <div class="skill">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS " />
             <p>CSS</p>
           </div>
           <div class="skill">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript img" />
             <p>JavaScript</p>
           </div>
           <div class="skill">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript img" />
             <p>TypeScript</p>
           </div>
           <div class="skill">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js img" />
             <p>Node.js</p>
           </div>
           <div class="skill">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL img" />
             <p>MySQL</p>
           </div>
         </div>
@@ -77,33 +78,39 @@
       <section id="projects" data-aos="fade-up">
         <h2>Projects</h2>
         <div class="projects-container" >
-  <a href="#" class="project-card" data-aos="zoom-in">
+  <a href="https://github.com/SeikoSanOff/Hoshisora" class="project-card" data-aos="zoom-in">
     <img src="https://via.placeholder.com/400x200" alt="" />
     <div class="card-content">
-      <h3>Voicemeeter Script</h3>
-      <p>Un script personnalisé pour contrôler Voicemeeter à distance.</p>
+      <h3>Hoshisora Bot</h3>
+      <p class="project-desc">Hoshisora est un bot Discord offrant des commandes de base pour l'administration serveur. Régulièrement mis à jour. Facile à installer.</p>
+    </div>
+  </a>
+  <a href="" class="project-card" data-aos="zoom-in">
+    <img src="https://via.placeholder.com/400x200" alt="" />
+    <div class="card-content">
+      <h3>Exemple : Landing Page</h3>
+      <p class="project-desc">Une page d’atterrissage moderne et responsive.</p>
     </div>
   </a>
   <a href="#" class="project-card" data-aos="zoom-in">
     <img src="https://via.placeholder.com/400x200" alt="" />
     <div class="card-content">
-      <h3>Landing Page</h3>
-      <p>Une page d’atterrissage moderne et responsive.</p>
-    </div>
-  </a>
-  <a href="#" class="project-card" data-aos="zoom-in">
-    <img src="https://via.placeholder.com/400x200" alt="" />
-    <div class="card-content">
-      <h3>TypeScript Bot</h3>
-      <p>Bot Discord écrit en TypeScript avec commandes dynamiques.</p>
+      <h3>Exemple : TypeScript Bot</h3>
+      <p class="project-desc">Bot Discord écrit en TypeScript avec commandes dynamiques.</p>
     </div>
   </a>
 </div>
       </section>
 
       <section id="contact" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>Mail: seiko@example.com</p>
+
+        <div class="contact-panel">
+          <div class="console-output" id="console"></div>
+          <div class="console-input">
+            <span>&gt;</span>
+            <input type="text" id="cmdInput" autocomplete="off" placeholder="Tape une commande...">
+          </div>
+        </div>
       </section>
     </main>
 
@@ -178,6 +185,82 @@
       header.classList.remove("show");
     }
   });
+</script>
+<script>
+  const consoleEl = document.getElementById('console');
+  const cmdInput = document.getElementById('cmdInput');
+
+  const lines = [
+    '> Initializing contact module...',
+    '> Loading profile...',
+    '',
+    '[1] Email: <a href="mailto:seikosan.contact@gmail.com?subject=Question%20de%20développement&body=Bonjour%20SeikoSan,">seikosan.contact@gmail.com</a>',
+    '[2] LinkedIn: <a href="https://linkedin.com/in/johndoe" target="_blank">linkedin.com/in/johndoe</a>',
+    '[3] GitHub: <a href="https://github.com/SeikoSanOff" target="_blank">github.com/SeikoSanOff</a>',
+    '[4] Message: "Hello, world!"',
+    '',
+    '> Tape un numéro pour ouvrir le lien, ou "clear" pour effacer.'
+  ];
+
+  let i = 0;
+
+  function typeLine() {
+    if (i < lines.length) {
+      const line = document.createElement('p');
+      line.innerHTML = lines[i++];
+      consoleEl.appendChild(line);
+      consoleEl.scrollTop = consoleEl.scrollHeight;
+      setTimeout(typeLine, 400);
+    }
+  }
+
+  typeLine();
+
+  cmdInput.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      const input = cmdInput.value.trim();
+      if (input) {
+        printToConsole(`> ${input}`);
+        handleCommand(input);
+        cmdInput.value = '';
+      }
+    }
+  });
+
+  function printToConsole(text) {
+    const line = document.createElement('p');
+    line.textContent = text;
+    consoleEl.appendChild(line);
+    consoleEl.scrollTop = consoleEl.scrollHeight;
+  }
+
+  function handleCommand(cmd) {
+    switch (cmd) {
+      case '1':
+        window.location.href = 'mailto:seikosan.contact@gmail.com?subject=Question%20de%20développement&body=Bonjour%20SeikoSan,';
+        break;
+      case '2':
+        window.open('https://linkedin.com/in/johndoe', '_blank');
+        break;
+      case '3':
+        window.open('https://github.com/SeikoSanOff', '_blank');
+        break;
+      case '4':
+        printToConsole('> Hello, world!');
+        break;
+      case 'clear':
+        consoleEl.innerHTML = '';
+        break;
+
+        case 'eggs':
+      printToConsole('> Ouverture du jeu...');
+      window.open('http://127.0.0.1:5500/eggs.html', 'Clicker', 'width=600,height=600');
+      break;
+
+      default:
+        printToConsole('> Commande inconnue. Essaie 1, 2, 3 ou "clear".');
+    }
+  }
 </script>
 </body>
 </html>

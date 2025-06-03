@@ -1,12 +1,12 @@
 {
   "particles": {
-    "number": { "value": 80 },
+    "number": { "value": 100 },
     "size": { "value": 1.5 },
     "move": { "direction": "bottom", "speed": 1.2 },
     "line_linked": { "enable": false },
     "shape": { "type": "circle" },
     "opacity": { "value": 0.8 },
-    "color": { "value": "#444444" }
+    "color": { "value": "#111111" }
   },
   "interactivity": {
     "events": {

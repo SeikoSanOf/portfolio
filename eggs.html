@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Effet Hacker Néon</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #0f0f23;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: 'Orbitron', monospace;
+      color: #9b59b6;
+      text-shadow:
+        0 0 5px #9b59b6,
+        0 0 10px #9b59b6,
+        0 0 20px #8e44ad,
+        0 0 30px #8e44ad,
+        0 0 40px #7d3c98,
+        0 0 55px #6c3483,
+        0 0 75px #5b2c6f;
+    }
+
+    h1 {
+      font-size: 8vw;
+      letter-spacing: 0.2em;
+      animation: neonPulse 2.5s ease-in-out infinite;
+      position: relative;
+      user-select: none;
+    }
+
+    @keyframes neonPulse {
+      0%, 100% {
+        text-shadow:
+          0 0 5px #9b59b6,
+          0 0 10px #9b59b6,
+          0 0 20px #8e44ad,
+          0 0 30px #8e44ad,
+          0 0 40px #7d3c98,
+          0 0 55px #6c3483,
+          0 0 75px #5b2c6f;
+        color: #9b59b6;
+      }
+      50% {
+        text-shadow:
+          0 0 10px #d291f4,
+          0 0 20px #d291f4,
+          0 0 30px #bb80ff,
+          0 0 40px #bb80ff,
+          0 0 50px #b266ff,
+          0 0 60px #a64dff,
+          0 0 70px #9933ff;
+        color: #d291f4;
+      }
+    }
+
+    /* Petite animation glitch */
+    @keyframes glitch {
+      0% {
+        clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+        transform: translate(0);
+      }
+      20% {
+        clip-path: polygon(0 15%, 100% 15%, 100% 18%, 0 18%);
+        transform: translate(-2px, -1px);
+      }
+      40% {
+        clip-path: polygon(0 30%, 100% 30%, 100% 33%, 0 33%);
+        transform: translate(2px, 1px);
+      }
+      60% {
+        clip-path: polygon(0 45%, 100% 45%, 100% 48%, 0 48%);
+        transform: translate(-2px, 1px);
+      }
+      80% {
+        clip-path: polygon(0 60%, 100% 60%, 100% 63%, 0 63%);
+        transform: translate(2px, -1px);
+      }
+      100% {
+        clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+        transform: translate(0);
+      }
+    }
+
+    h1::before {
+      content: 'HACKER';
+      position: absolute;
+      left: 2px;
+      text-shadow: -2px 0 #ff00c8;
+      top: 0;
+      color: #fff;
+      animation: glitch 2s infinite linear alternate-reverse;
+      clip-path: polygon(0 0, 100% 0, 100% 10%, 0 10%);
+    }
+
+    h1::after {
+      content: 'HACKER';
+      position: absolute;
+      left: -2px;
+      text-shadow: -2px 0 #00fff7;
+      top: 0;
+      color: #fff;
+      animation: glitch 3s infinite linear alternate;
+      clip-path: polygon(0 90%, 100% 90%, 100% 100%, 0 100%);
+    }
+  </style>
+</head>
+<body>
+  <h1>Seiko ^^</h1>
+</body>
+</html>

@@ -193,7 +193,7 @@ h2 {
 
 .intro-text {
   font-size: 2.6rem;
-  color: #eee;
+  color: #e01010;
   font-weight: 700;
   margin-bottom: 25px;
   user-select: none;
@@ -264,10 +264,10 @@ h2 {
 }
 
 #skills {
-  scroll-margin-top: var(--header-height);
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  scroll-margin-top: 70px;
 }
 
 #skills.aos-animate {
@@ -435,6 +435,63 @@ h2 {
 
 
 
+
+
+
+  .contact-panel {
+  backdrop-filter: blur(6px);
+  border: 2px #6b46c1;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #a855f7;
+  font-family: monospace;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.console-output {
+  height: 250px;
+  overflow-y: auto;
+  padding: 1rem;
+  border-bottom: 1px solid #333;
+}
+
+.console-input {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.console-input span {
+  margin-right: 8px;
+  color: #a855f7;
+}
+
+.console-input input {
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+  color: #a855f7;
+  font-family: monospace;
+  font-size: 1rem;
+  outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Scrollbar custom pour les conteneurs */
 .projects-container::-webkit-scrollbar {
   height: 6px;
@@ -522,25 +579,30 @@ h2 {
 /* Thème clair */
 body.light-theme {
   background: transparent;
-  background-color: #f9f9f9;
+  background-color: #ffffffd0;
   color: #222;
   min-height: 100vh;
   height: max-content;
 }
 
+
+
+
+
 body.light-theme header {
-  background: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-  color: #222;
+  background: rgba(255, 255, 255, 0.075);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 body.light-theme header nav a {
-  color: #555;
+  color: #272727;
 }
 
 body.light-theme header nav a.main-btn {
   color: #222;
-  background-color: #e0d7f8;
+  background-color: #f7f5fc6c;
 }
 
 body.light-theme header nav a:hover,
@@ -563,32 +625,23 @@ body.light-theme #theme-toggle:focus {
   outline: none;
 }
 
-body.light-theme .avatar-circle {
-  border-color: #888;
-  box-shadow: 0 0 20px rgba(136, 136, 136, 0.5);
-}
 
-body.light-theme .intro-section p,
-body.light-theme .skill p,
-body.light-theme .project-card,
+
+body.light-theme .skill p {
+  color: rgba(0, 0, 0, 0.75);
+}
 body.light-theme .skill {
   color: #333;
   background: rgba(0,0,0,0.05);
 }
 
-body.light-theme .skill:hover {
-  background: rgba(107, 70, 193, 0.15);
+
+body.light-theme .project-desc {
+  color: rgba(0, 0, 0, 0.75);
 }
 
-body.light-theme .project-card {
-  background: rgba(220, 210, 255, 0.7);
-}
 
-body.light-theme .project-card:hover {
-  background-color: #6b46c1;
-  transform: perspective(600px) rotateY(5deg);
-  color: #f9f9f9;
-}
+
 
 body.light-theme ::-webkit-scrollbar-track {
   background: #ddd;
