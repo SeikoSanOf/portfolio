@@ -1,146 +1,148 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-
+<html lang="fr">
 <head>
-	<meta charset="UTF-8" />
-	<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-	<title>Portfolio: Home Page</title>
-	<meta name="description" content="Seiko: A basic template for a page stack navigation effect" />
-	<meta name="keywords" content="blueprint, template, html, css, page stack, 3d, perspective, navigation, menu" />
-	<meta name="author" content="Codrops" />
-	<link rel="shortcut icon" href="favicon.ico">
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-	
-
-	<link rel="stylesheet" type="text/css" href="css/demo.css" />
-	<link rel="stylesheet" type="text/css" href="css/component.css" />
-	<script src="js/modernizr-custom.js"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portfolio - Seiko</title>
+<link rel="stylesheet" href="style.css" />
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
-
 <body>
-	<!-- navigation -->
-	<nav class="pages-nav">
-		<div class="pages-nav__item"><a class="link link--page" href="#page-home">Accueil</a></div>
-		<div class="pages-nav__item"><a class="link link--page" href="#page-docu">Présentation</a></div>
-		<div class="pages-nav__item"><a class="link link--page" href="#page-manuals">Réalisation</a></div>
-		<div class="pages-nav__item"><a class="link link--page" href="#page-software">Activités | software</a></div>
-		<div class="pages-nav__item"><a class="link link--page" href="#page-custom">custom</a></div>
-		<div class="pages-nav__item"><a class="link link--page" href="#page-competences">competences</a></div>
-		<div class="pages-nav__item pages-nav__item--small"> <a class="link link--page link--faded" href="#page-contact">Contact</a></div>
-		<div class="pages-nav__item pages-nav__item--social">
-			<a class="link link--social link--faded" href="https://github.com/SeikoSanOff" target="_blank"> <i class="fa fa-github"></i><span class="text-hidden">Github</span></a>
-		<!--	<a class="link link--social link--faded" href="#" target="_blank"> <i class="fa fa-youtube-play"> </i><span class="text-hidden">YouTube</span></a> -->
-			<a class="link link--social link--faded" href="https://www.twitch.tv/seikosanof" target="_blank"> <i class="fa fa-twitch"></i><span class="text-hidden">Twitch</span></a>
-			<a class="link link--social link--faded" href="https://fr.linkedin.com/in/hugo-philippe-216b8527a" target="_blank"> <i class="fa fa-linkedin"></i><span class="text-hidden">Linkedin</span></a>
+  <div id="particles-js"></div>
 
-		</div>
-		<!-- pour les resaux dans le menu cacher juste la au dessus-->
-	</nav>
-	<!-- /navigation-->
-	<!-- pages stack -->
-	<div class="pages-stack">
-		<!-- page -->
-		<div class="page" id="page-home">
-			<!-- Seiko header -->
-			<header class="bp-header cf">
-				<span class="bp-header__present">Hugo Philippe <span class="bp-tooltip bp-icon bp-icon--about" data-content="Studiant of developping school."></span></span>
-				<h1 class="bp-header__title">Portfolio</h1>
-				<p class="bp-header__desc">Exemple de lien <a href="https://youtube.com">Exemple youtube</a></p>
+  <header>
+    <nav>
+      <a href="#about" class="main-btn" id="main">Main</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projets</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-right">
+      <button id="theme-toggle" aria-label="Changer thème">🌓</button>
+    </div>
+  </header>
 
-				<!-- Simple lecture audio -->
-<audio src="coupdepoing.mp3" autoplay>
-	Votre navigateur ne supporte pas l'élément <code>audio</code>.
-  </audio>
-  
-			</header>
-		</div>
-		<!-- /page -->
-		<div class="page" id="page-docu">
-			<header class="bp-header cf">
-				<h1 class="bp-header__title">Présentation</h1>
-				<p class="bp-header__desc">sfsdfsfsfdsfqfsdfqdf <a href="">Exemple lien</a></p>
-				<p class="info">
-					"Hello, I am
-					Seiko
-					I'm a developer who loves to create beautiful and functional program for people who want to make a difference in the world.
-					
-					Currently I'm a student" &mdash; Seiko"
-				</p>
-			</header>
-			<img class="poster" src="images/1.jpg" alt="img06" />
-		</div>
-		<div class="page" id="page-manuals">
-			<header class="bp-header cf">
-				<h1 class="bp-header__title">Réalisation</h1>
-				<p class="bp-header__desc">fhsfgsydugfyusgfduysgfsqfggsjfgjhsdfgjhgsf <a href="">Stacked navigation</a></p>
-				<p class="info">
-					"When you adopt a vegan diet we make a connection, you don't go back, it is not a diet, it is a lifestyle." &mdash; Freelee Frugivore
-				</p>
-			</header>
-			<img class="poster" src="images/1.jpg" alt="img02" />
-		</div>
-		<div class="page" id="page-software">
-			<header class="bp-header cf">
-				<h1 class="bp-header__title">Activités | software</h1>
-				<p class="bp-header__desc">Based on Ilya Kostin's Dribbble shot <a href=".">Stacked navigation</a></p>
-				<p class="info">
-					"I decided to pick the diet that I thought would maximize my chances of long-term survival." &mdash; Al Gore
-				</p>
-			</header>
-			<img class="poster" src="images/1.jpg" alt="img03" />
-		</div>
-		<div class="page" id="page-custom">
-			<header class="bp-header cf">
-				<h1 class="bp-header__title">Competence</h1>
-				<p class="bp-header__desc">dfsfdsfdsfd <a href="">Stacked navigation</a></p>
-				<p class="info">
-					"fjsdvfsvfgdsvfghsvdfghsvfghsvfhgdsvhfgsvhfgsvhdgfvshvfdsgf.
-					
-					sf
-					sd
-					g
-					ds
-					g
-					dsg
-					ds
-					fg
-					Studiantg
-					dfsfdsfdsfdg
-					sf
-					dg
-					sd
-					fg" &mdash; SeikoSan
-				</p>
-			</header>
-			<img class="poster" src="images/1.jpg" alt="img04" />
-		</div>
-		<div class="page" id="page-competences">
-			<header class="bp-header cf">
-				<h1 class="bp-header__title">Contact</h1>
-				<p class="bp-header__desc">dhsbjhsgfhsgdfjghdfhgqsjfhjfgsfgjhq<a href="">Exemple lien</a></p>
-				<p class="info">
-					"sqdfqfqfdqfdqfsqdfqsqdfqfqfdqfdqfsqdfqsqdfqfqfdqfdqfsqdfq." &mdash; Jeana la mouche
-				</p>
-			</header>
-			<img class="poster" src="images/1.jpg" alt="img05" />
-		</div>
-		</div>
-		<div class="page" id="page-contact">
-			<header class="bp-header cf">
-				<h1 class="bp-header__title">Contact</h1>
-				<p class="bp-header__desc">sdfgdsgsdg <a href="">Exemple</a></p>
-				<p class="info">
-					"sqdfqfqfdqfdqfsqdfqfqfhvsqfdvsqfvsnbqfdnbqvfnbvsdqf." &mdash; BLABLA.
-				</p>
-			</header>
-			<img class="poster" src="images/1.jpg" alt="img04" />
-		</div>
-	</div>
-	<!-- /pages-stack -->
-	<button class="menu-button"><span>Menu</span></button>
-	<script src="js/classie.js"></script>
-	<script src="js/main.js"></script>
+    <main>
+      <section id="about" data-aos="fade-up" class="intro-section">
+        <!-- Cercle avatar en grand au centre -->
+        <div class="avatar-circle large-avatar">
+          <img src="https://i.pravatar.cc/150" alt="Avatar">
+        </div>
+        <h2>Hey 👋</h2>
+        <p>Jeune développeur web passionné par l'informatique.</p>
+      </section>
+
+      <section id="skills" data-aos="fade-up">
+        <h2>Skills</h2>
+        <div class="skills-container">
+          <div class="skill">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
+            <p>HTML</p>
+          </div>
+          <div class="skill">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
+            <p>CSS</p>
+          </div>
+          <div class="skill">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+            <p>JavaScript</p>
+          </div>
+          <div class="skill">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" />
+            <p>TypeScript</p>
+          </div>
+          <div class="skill">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+            <p>Node.js</p>
+          </div>
+          <div class="skill">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
+            <p>MySQL</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" data-aos="fade-up">
+        <h2>Projects</h2>
+        <div class="projects-container">
+          <a href="#" class="project-card">Voicemeeter Script</a>
+          <a href="#" class="project-card">Landing Page</a>
+          <a href="#" class="project-card">TypeScript Bot</a>
+        </div>
+      </section>
+
+      <section id="contact" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Mail: seiko@example.com</p>
+      </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    //Main
+    document.getElementById("main").addEventListener("click", function(e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 100,
+        behavior: "smooth"
+      });
+    });
+
+    window.addEventListener('mousemove', function(event) {
+      const mouseX = event.clientX;
+      const mouseY = event.clientY;
+      // Utilise mouseX, mouseY pour mettre à jour les particules
+    });
+
+
+    function loadParticlesForTheme(theme) {
+      const configFile = theme === 'light' ? 'particles-light.json' : 'particles-dark.json';
+      particlesJS.load('particles-js', configFile, function() {
+        console.log(`Particles chargées pour thème ${theme}`);
+      });
+    }
+
+    const toggleTheme = () => {
+    document.documentElement.classList.toggle('light-theme');
+    document.body.classList.toggle('light-theme');
+    };
+
+    // Récupérer thème dans localStorage ou défaut à 'dark'
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+
+    // Appliquer la classe light-theme pour suivi mais sans impact visuel
+    if (currentTheme === 'light') {
+      document.body.classList.add('light-theme');
+    } else {
+      document.body.classList.remove('light-theme');
+    }
+
+    loadParticlesForTheme(currentTheme);
+
+    // Toggle bouton
+    const toggle = document.getElementById('theme-toggle');
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        const isLight = document.body.classList.toggle('light-theme');
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        loadParticlesForTheme(isLight ? 'light' : 'dark');
+      });
+    }
+
+    AOS.init();
+  </script>
+  <script>
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      header.classList.add("show");
+    } else {
+      header.classList.remove("show");
+    }
+  });
+</script>
 </body>
-
 </html>
