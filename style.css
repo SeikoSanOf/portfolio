@@ -6,10 +6,6 @@
   --header-height: 60px;
 }
 
-:root {
-  --header-height: 60px;
-}
-
 #particles-js {
   position: fixed;
   top: 0; left: 0;
@@ -28,12 +24,16 @@ html, body {
 }
 
 body {
+  scroll-snap-type: y mandatory;
   min-height: 100vh;
   background: transparent;
   color: #eee;
   position: relative;
   overflow-x: hidden;
+  overflow-y: scroll;
 }
+
+
 
 main {
   position: relative;
@@ -173,7 +173,7 @@ h2 {
   width: 220px;
   height: 220px;
   border-radius: 50%;
-  border: 3px solid #bbb;
+  border: 3px solid #cda1f7;
   box-shadow: 0 0 20px rgba(187, 187, 187, 0.5);
   display: block;
   margin: 40px auto 25px;
@@ -198,7 +198,7 @@ h2 {
   user-select: none;
 }
 
-.intro-section p {
+.about-section p {
   font-size: 1.6rem;
   font-weight: 500;
   color: #ddd;
@@ -208,12 +208,88 @@ h2 {
 }
 
 #about {
-  min-height: calc(100vh - var(--header-height));
+  min-height: 100vh;
   padding-top: var(--header-height);
   display: flex;
   flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  scroll-margin-top: 60px;
+  box-sizing: border-box;
+  padding: 3rem 2rem;
+  width: 100%;
+  max-width: 1100px; /* un max-width un peu plus contenu */
+  margin-top: 2.5vh;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  scroll-margin-top: 60px; /* pour que les ancres ne soient pas cachées */
+  gap: 2.5rem; /* espace entre catégories */
+  width: 100%;
+  max-width: 100%; /* prends toute la largeur dispo */
+}
+
+.intro-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 2px solid rgba(168, 85, 247, 0.4); /* bordure visible mais douce */
+  transition: opacity 0.8
+}
+
+.avatar-circle:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.404);
+}
+
+.avatar-circle {
+  border: 3px solid #cda1f7;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.intro-content {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  gap: 40px;
+}
+
+.about:hover {
+  background: rgba(168, 85, 247, 0.15);
+}
+
+.text-zone {
+  flex: 1;
+  min-width: 300px;
+}
+
+.text-zone h2 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.text-zone p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.canvas-zone {
+  flex: 1;
+  min-width: 300px;
+  height: 400px;
+}
+
+#characterCanvas {
+  width: 100%;
+  height: 100%;
+  background: rgba(175, 0, 0, 0.034);
+  border-radius: 8px;
 }
 
 .skills-container {
@@ -263,25 +339,72 @@ h2 {
 
 .projects-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1.5rem;
+  padding: 1rem;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 .project-card {
-  background: rgba(40, 30, 50, 0.7);
-  padding: 1rem 1.5rem;
-  border-radius: 10px;
-  color: #ddd;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  scroll-snap-align: start;
+  width: 340px;
+  border-radius: 16px;
+  background: #1a0d2f;
+  border: 2px solid #a855f7;
+  box-shadow:
+    0 0 10px #a855f7aa,
+    0 0 20px #a855f7aa inset;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #eee;
   text-decoration: none;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card:hover {
+  transform: scale(1.03);
+  box-shadow:
+    0 0 12px #e946fd,
+    0 0 30px #c855f7 inset;
+}
+
+.card-content h3 {
+  color: #e9b3ff;
+  text-shadow: 0 0 8px #a855f7;
+}
+
+.card-content p {
+  color: #ccc;
+}
+
+.card-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #a855f7;
+}
+
+.card-content p {
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.4;
+}
+
+.projects-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.projects-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.projects-container::-webkit-scrollbar-thumb {
   background-color: #a855f7;
-  color: #111;
-  transform: translateY(-3px);
+  border-radius: 10px;
 }
 
 /* Scrollbar custom */
@@ -300,7 +423,25 @@ h2 {
 
 
 
+.console-text {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1.5rem;
+  color: #a855f7; /* Vert néon comme un terminal rétro */
+  background-color: #2c2c2c2c; /* Fond noir comme une console */
+  padding: 0.5rem;
+  display: inline-block;
+  border-radius: 4px;
+}
 
+.blinking-cursor {
+  color: #a855f7;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
 
 
 
@@ -383,6 +524,7 @@ body.light-theme .project-card {
 
 body.light-theme .project-card:hover {
   background-color: #6b46c1;
+  transform: perspective(600px) rotateY(5deg);
   color: #f9f9f9;
 }
 

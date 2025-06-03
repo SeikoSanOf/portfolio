@@ -24,13 +24,24 @@
   </header>
 
     <main>
-      <section id="about" data-aos="fade-up" class="intro-section">
+      <section id="about" data-aos="fade-up" class="about-section">
         <!-- Cercle avatar en grand au centre -->
         <div class="avatar-circle large-avatar">
-          <img src="https://i.pravatar.cc/150" alt="Avatar">
+          <img src="https://as2.ftcdn.net/jpg/05/63/10/09/1000_F_563100976_FGxK7iI0jqVafQRBs4TK0AWeKO5S2VOW.jpg" alt="Avatar">
         </div>
-        <h2>Hey 👋</h2>
-        <p>Jeune développeur web passionné par l'informatique.</p>
+        <h2 class="console-text">HACKED BY SEIKO<span class="blinking-cursor">_</span></h2>
+        <!--  <p>Jeune développeur web passionné par l'informatique.</p>  -->
+      </section>
+
+      <section id="intro-section" data-aos="fade-up" class="intro-section">
+        <div class="intro-content">
+          <div class="text-zone">
+            <h2>À propos de moi</h2>
+            <p>
+              Je suis un développeur passionné par la création d'expériences web interactives. Mon objectif est de concevoir des interfaces modernes, accessibles et fonctionnelles. J'aime explorer de nouvelles technologies comme la 3D, les API et les frameworks modernes.
+            </p>
+          </div>
+        </div>
       </section>
 
       <section id="skills" data-aos="fade-up">
@@ -65,11 +76,29 @@
 
       <section id="projects" data-aos="fade-up">
         <h2>Projects</h2>
-        <div class="projects-container">
-          <a href="#" class="project-card">Voicemeeter Script</a>
-          <a href="#" class="project-card">Landing Page</a>
-          <a href="#" class="project-card">TypeScript Bot</a>
-        </div>
+        <div class="projects-container" >
+  <a href="#" class="project-card" data-aos="zoom-in">
+    <img src="https://via.placeholder.com/400x200" alt="Voicemeeter Script" />
+    <div class="card-content">
+      <h3>Voicemeeter Script</h3>
+      <p>Un script personnalisé pour contrôler Voicemeeter à distance.</p>
+    </div>
+  </a>
+  <a href="#" class="project-card" data-aos="zoom-in">
+    <img src="https://via.placeholder.com/400x200" alt="Landing Page" />
+    <div class="card-content">
+      <h3>Landing Page</h3>
+      <p>Une page d’atterrissage moderne et responsive.</p>
+    </div>
+  </a>
+  <a href="#" class="project-card" data-aos="zoom-in">
+    <img src="https://via.placeholder.com/400x200" alt="TypeScript Bot" />
+    <div class="card-content">
+      <h3>TypeScript Bot</h3>
+      <p>Bot Discord écrit en TypeScript avec commandes dynamiques.</p>
+    </div>
+  </a>
+</div>
       </section>
 
       <section id="contact" data-aos="fade-up">
@@ -85,7 +114,7 @@
     document.getElementById("main").addEventListener("click", function(e) {
       e.preventDefault();
       window.scrollTo({
-        top: 100,
+        top: 0,
         behavior: "smooth"
       });
     });
@@ -131,7 +160,13 @@
       });
     }
 
-    AOS.init();
+    AOS.init({
+      duration: 800,   // Durée de l'animations 
+      easing: 'ease-in-out',  // Type de courbe d'animation
+      once: false,     // L'animation ne se répète pas après avoir été jouée une fois
+      mirror: false,  // Désactive le miroir des animations
+      offset: 100     // Ajuste la position d'activation de l'animation (plus bas sur la page)
+    });
   </script>
   <script>
   const header = document.querySelector("header");
