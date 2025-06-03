@@ -479,7 +479,6 @@ h2 {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 1.5rem;
   color: #a855f7; /* Violet néon */
-  background-color: rgba(44, 44, 44, 0.075); /* Fond semi-transparent */
   padding: 0.5rem;
   display: inline-block;
   border-radius: 4px;
